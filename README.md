@@ -35,8 +35,8 @@ By Domenique: I registered using my institutional mail and it gives me the possi
 #5. Click on Generate and wait. Give a name as: first 10k, second 10k augmented, etc…
 
 #6. Download the dataset choosing the most convenient format:
-(For me, Tensorflow Object Detection would lead to restart my pc over and over so I still did not discover what will be the format)
-
+Tensorflow Object Detection exports also a csv file that is like ours!
  ![image](https://user-images.githubusercontent.com/51834820/142015589-147d7dcd-c1d0-4558-aa90-593fadd57ba7.png)
-
+Choose to download the zip file via an URL:
+![image](https://user-images.githubusercontent.com/51834820/142031357-aba84f86-d85c-4894-8dab-c9dd5d076e11.png)
 
