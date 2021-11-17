@@ -18,9 +18,9 @@
 
 
 # ROBOFLOW
-By Domenique: I registered using my institutional mail and it gives me the possibility to upload up to 10k images.
+By Domenique: if you register as a public account it gives you the possibility to upload up to 10k images.
 
-#1. In a new LogoDet project, Upload the annot_train.csv file 
+#1. In a new LogoDet project, upload the annot_train.csv file 
 
 #2. Upload only the train folder with images (coordinate with the others: upload only the images that were not already processed by someone else. I put the first 10k of train). Choose the option 100% training:
  
@@ -36,7 +36,13 @@ By Domenique: I registered using my institutional mail and it gives me the possi
 
 #6. Download the dataset choosing the most convenient format:
 Tensorflow Object Detection exports also a csv file that is like ours!
- ![image](https://user-images.githubusercontent.com/51834820/142015589-147d7dcd-c1d0-4558-aa90-593fadd57ba7.png)
+
+ ![image](https://user-images.githubusercontent.com/51834820/142196699-576792ab-be13-4638-b513-0e40a292d04d.png)
+ 
 Choose to download the zip file via an URL:
-![image](https://user-images.githubusercontent.com/51834820/142031357-aba84f86-d85c-4894-8dab-c9dd5d076e11.png)
+
+![image](https://user-images.githubusercontent.com/51834820/142196826-20a05715-3c74-4632-9e1d-4df90a212c96.png)
+
+#7. Repeat this process 4 times to augment approximately all the train images
+
 
