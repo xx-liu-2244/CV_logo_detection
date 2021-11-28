@@ -57,20 +57,21 @@ for f in test_files:
     ind = i[0]
   filtered_label = labels[ind]
 
-  labels_predictions[f] = filtered_label
-  boxes_predictions[f] = filtered_box
-  scores_predictions[f] = filtered_score.tolist()
+  labels_prediction[f] = filtered_label
+  boxes_prediction[f] = filtered_box
+  scores_prediction[f] = filtered_score.tolist()
   
-# create one dataframe storing all the results (iou, logo predicted, score)
+
+# create one dataframe storing all the results from the prediction (iou, logo, score)
 lst = []
 
 for f in test_files:
-  true_box = annot_test[annot_test['filename']==f].iloc[0,-4:].tolist()
-  pred_box = boxes_predictions[f]
+  true_box = annot_test[annot_test['filename']==f].iloc[0,-4:].tolist() #coordinates of the ground-truth bounding boxes
+  pred_box = boxes_prediction[f] #coordinates of the predicted bounding boxes
   iou = float(IoU(true_box, pred_box[0]))
   true_logo = annot_test[annot_test['filename']==f]['class'].iloc[0]
-  pred_logo = labels_predictions[f]
-  pred_score = scores_predictions[f]
+  pred_logo = labels_prediction[f]
+  pred_score = scores_prediction[f]
   lst.append([f,iou,true_logo,pred_logo, pred_score])
 
 test_results = pd.DataFrame(lst, columns=['filename','IoU','true logo','pred logo','score'])
