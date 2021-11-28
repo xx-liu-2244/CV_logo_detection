@@ -52,6 +52,7 @@ for f in test_files:
   filtered_index = np.where(max(scores))
   filtered_score = scores[filtered_index]
   filtered_box = boxes[filtered_index]
+    
   for i in filtered_index:
     ind = i[0]
   filtered_label = labels[ind]
