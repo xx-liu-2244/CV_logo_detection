@@ -1,5 +1,76 @@
 # CV_logo_detection
 
+GitHub Logo Detection
+
+Files:
+- train images (80%)
+- test images (20%)
+- annot_train.csv
+- annot_test.csv
+- detecto_weights_xlogos.pth
+- detecto_x_logos.py
+- detecto_evaluation.ipynb
+
+ReadME
+Intro: this is a repo for Logo Detection using Detecto model.
+
+1. The Model - Detecto
+		General overview, explanation
+		LInk to documentation
+		Requirements:
+		- csv structure: filename, height, width, class, xmin, ymin, xmax, ymax, image_id
+		- in GPU
+	
+2. how train and test images were split, moving the test images to a new folder ‘test’
+
+	np.random.seed(123)
+	for f in files_name:
+    		if np.random.rand(1) < 0.2:
+        	shutil.move('train_images/'+f, 'test_images/'+f) 
+
+3. train and test annotations generation, saved to csv. Explain how many classes and which logos we used to train our model. And why we included the “Other” class as well.
+
+
+annot_train.csv = original csv with all annots
+
+annot_data= pd.read_csv(‘annot_train.csv’).rename({‘photo_filename’:’filename’}, axis=1)
+
+logos = […….]
+
+annot_train = annot_data[annot_data.filename.isin(train_files)]
+annot_train[‘image_id’] = [i for i in range(len(annot_train))]
+annot_train.loc[~annot_train[‘class'].isin(logos),'class'] = 'Other'
+annot_train.to_csv(……)
+
+annot_test = annot_data[annot_data.filename.isin(test_files)]
+annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
+annot_test.to_csv(….)
+
+
+4. Training the model
+	Showing the augmentation used in the model
+	
+	$python detecto_x_logos.py
+	FYI: nohup python detecto_x_logos.py &  —> for “not hanging up” and running the model in bg
+	this saves the model weights in the directory….
+	 
+	NB: this takes a lot of time. on average 5:30h per epoch
+	
+5. Prediction and Evaluation
+	Putting the nb for predicting test images and calculating the respective IoU
+		ref: detecto_evaluation.ipynb
+	Brief explanation of IoU
+	Showing the results of the model predictions 
+	(maybe also accuracy metric—> logos correctly predicted) 
+
+	put screenshot of images with bouding boxes drawn on it…
+	
+
+
+
+
+
+
 ## Fine-Tuning with Keras
 
 #### 1. Data
