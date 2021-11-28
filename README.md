@@ -65,9 +65,11 @@ annot_test.to_csv(….)
 
 	put screenshot of images with bouding boxes drawn on it…
 	
+	
+## Limitations (TBD)
 
-
-
+* Unbalanced dataset: too many Nike & Adidas
+* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/EslFGa-ZMuNItHzhlJS-7owBlOYlMowfnZ7RTLaiiHdbeA?e=6yHCJq
 
 
 
@@ -82,7 +84,7 @@ annot_test.to_csv(….)
 * Base model/pre-trained model selection: 
 ![image](https://user-images.githubusercontent.com/83235873/138552330-dc31be07-ec87-4824-bd16-7f79a926258e.png)
 
-* Complie new layers, rescale-basemodel-pooling-dropout-dense 
+* Compile new layers, rescale-basemodel-pooling-dropout-dense 
 
 #### 3. Train and Fine-Tuning
 * try different top-layer inclusion
