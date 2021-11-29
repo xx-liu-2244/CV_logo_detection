@@ -1,6 +1,4 @@
-# CV_logo_detection
-
-GitHub Logo Detection
+# Deep Learning for Computer Vision - Logo Detection
 
 Files:
 - train images (80%)
