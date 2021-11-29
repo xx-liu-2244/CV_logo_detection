@@ -2,19 +2,17 @@ import pandas as pd
 import numpy as np
 import os
 from detecto import core, utils
-from detecto.visualize import show_labeled_image
-import cv2
-from collections import namedtuple
 
-ANNOT_TEST_PATH = "./annot_test.csv"
-TEST_IMAGES_PATH = "./test"
+
+ANNOT_TEST_PATH = "annot_test.csv" #file containing all the annotations for the test set
+TEST_IMAGES_PATH = "test" #folder in which the images are stored
 
 annot_test = pd.read_csv(ANNOT_TEST_PATH) #annotations of test set
 test_files = os.listdir(TEST_IMAGES_PATH) #list of test images file names
 logos = annot_test['class'].unique().tolist() #list of logos
 
 # Loading the detecto saved model
-model_load = core.Model.load("model_weights_17logos.pth", logos) #change file name based on how it was saved
+model_load = core.Model.load("detecto_weights_15logos.pth", logos) #change file name based on how it was saved
 
 def IoU(y_true,y_pred):
     xA = max(y_true[0], y_pred[0])       
@@ -25,21 +23,19 @@ def IoU(y_true,y_pred):
     # compute the area of intersection rectangle
     interArea = max(0, xB - xA) * max(0, yB - yA)
 
-    # compute the area of both the prediction and ground-truth
-    # rectangles
+    # compute the area of both the prediction and ground-truth rectangles
     boxtrueArea = (y_true[2] - y_true[0]) * (y_true[3] - y_true[1])    
     boxpredArea = (y_pred[2] - y_pred[0]) * (y_pred[3] - y_pred[1])
 
-    # compute the intersection over union by taking the intersection
-    # area and dividing it by the sum of prediction + ground-truth
-    # areas - the interesection area
+    # compute the intersection over union by taking the intersection area and dividing it 
+    # by the sum of prediction + ground-truth areas - the interesection area
     iou = interArea / float(boxtrueArea + boxpredArea - interArea)
 
     # return the intersection over union value
     return iou
   
 
-# store prediction results of test images for labels, boxes and scores in respective dictionaries
+# store prediction results of test images in respective dictionaries for labels, boxes and scores
 labels_prediction = {}
 boxes_prediction = {}
 scores_prediction = {}
@@ -75,3 +71,4 @@ for f in test_files:
   lst.append([f,iou,true_logo,pred_logo, pred_score])
 
 test_results = pd.DataFrame(lst, columns=['filename','IoU','true logo','pred logo','score'])
+test_results.to_csv('test_results.csv',header=True, index=False)
