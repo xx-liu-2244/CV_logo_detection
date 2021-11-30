@@ -9,7 +9,7 @@ Files:
 - detecto_x_logos.py
 - detecto_evaluation.ipynb
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Introduction
+# Introduction
 Welcome to the repository for Logo Detection using the Detecto model. The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University.
 
 **1. The Model - Detecto** <br />
