@@ -1,0 +1,2 @@
+This attempts wit backbones training on top of coco-weights. 
+The training stops when loss=nan, therefore predictions and evaluations are only on the weights from succeeded ones.
