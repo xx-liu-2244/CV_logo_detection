@@ -8,25 +8,30 @@ Files:
 - detecto_weights_xlogos.pth
 - detecto_x_logos.py
 - detecto_evaluation.ipynb
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Introduction
+Welcome to the repository for Logo Detection using the Detecto model. The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University.
 
-ReadME
-Intro: this is a repo for Logo Detection using Detecto model.
-
-1. The Model - Detecto
-		General overview, explanation
-		LInk to documentation
-		Requirements:
-		- csv structure: filename, height, width, class, xmin, ymin, xmax, ymax, image_id
-		- in GPU
+**1. The Model - Detecto** <br />
+[Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
+* To install Detecto, run the following command: <br />
 	
-2. how train and test images were split, moving the test images to a new folder ‘test’
+	```
+	pip install detecto
+	```	
+Installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from required.txt
+		Requirements: <br />
+		- csv structure: filename, height, width, class, xmin, ymin, xmax, ymax, image_id <br />
+		- in GPU <br />
+	
+**2. how train and test images were split, moving the test images to a new folder ‘test’**
 
 	np.random.seed(123)
 	for f in files_name:
     		if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 
-3. train and test annotations generation, saved to csv. Explain how many classes and which logos we used to train our model. And why we included the “Other” class as well.
+**3. train and test annotations generation, saved to csv. Explain how many classes and which logos we used to train our model. And why we included the “Other” class as well.**
 
 
 annot_train.csv = original csv with all annots
@@ -45,7 +50,7 @@ annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv(….)
 
 
-4. Training the model
+**4. Training the model**
 	Showing the augmentation used in the model
 	
 	$python detecto_x_logos.py
@@ -54,7 +59,7 @@ annot_test.to_csv(….)
 	 
 	NB: this takes a lot of time. on average 5:30h per epoch
 	
-5. Prediction and Evaluation
+**5. Prediction and Evaluation**
 	Putting the nb for predicting test images and calculating the respective IoU
 		ref: detecto_evaluation.ipynb
 	Brief explanation of IoU
