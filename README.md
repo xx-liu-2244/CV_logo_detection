@@ -16,28 +16,32 @@ Welcome to the repository for Logo Detection using the Detecto model. The purpos
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
 * To install Detecto, run the following command: <br />
 	
-	```
-	pip install detecto
-	```	
-Installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from required.txt
-		Requirements: <br />
-		- csv structure: filename, height, width, class, xmin, ymin, xmax, ymax, image_id <br />
-		- in GPU <br />
+```
+pip install detecto
+```
+Installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from [requirements.txt](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/requirements.txt).<br />
+* Moreover, in order to run Detecto, there are also more technical requirements, such as: <br />
+	- The annotations file in .csv has to be structured with the following header:  *filename, height, width, class, xmin, ymin, xmax, ymax, image_id* <br />
+	- the model must run in GPU <br />
 	
-**2. how train and test images were split, moving the test images to a new folder ‘test’**
-
-	np.random.seed(123)
-	for f in files_name:
-    		if np.random.rand(1) < 0.2:
+**2. Train Test Split**
+Train and test images have been split with a 80/20 ratio, moving the test images to a new folder ‘test’: 
+```	
+np.random.seed(123)
+for f in files_name:
+    if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
+```
+	
+**3. Model Set up**
+* At first we generate the annotations of the train and test dataset and save them into a .csv format.
+```
+#annot_train.csv is the original .csv file with all annotations
 
-**3. train and test annotations generation, saved to csv. Explain how many classes and which logos we used to train our model. And why we included the “Other” class as well.**
-
-
-annot_train.csv = original csv with all annots
-
-annot_data= pd.read_csv(‘annot_train.csv’).rename({‘photo_filename’:’filename’}, axis=1)
-
+annot_data = pd.read_csv(‘annot_train.csv’).rename({‘photo_filename’:’filename’}, axis=1)
+```
+* In our model we chose XX classes containing XX logos. In order to create noise and to allow for the model to run efficiently without overloading it, among all the 15 logos, the remaining ones have been grouped in the 'Other' class.
+```
 logos = […….]
 
 annot_train = annot_data[annot_data.filename.isin(train_files)]
@@ -48,16 +52,18 @@ annot_train.to_csv(……)
 annot_test = annot_data[annot_data.filename.isin(test_files)]
 annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv(….)
+```
 
-
-**4. Training the model**
-	Showing the augmentation used in the model
-	
-	$python detecto_x_logos.py
-	FYI: nohup python detecto_x_logos.py &  —> for “not hanging up” and running the model in bg
-	this saves the model weights in the directory….
-	 
-	NB: this takes a lot of time. on average 5:30h per epoch
+**4. Training the Model**
+Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_x_logos.py] **(ADD LINK)**
+```	
+$python detecto_x_logos.py
+```
+NB: Since neural networks tend to take long training periods (on average it took us **5:30h** per epoch!), we suggest to implement the following command within your terminal (or Powershell) before running the above python code:
+```
+$nohup python detecto_x_logos.py &  
+```
+nohup --> “not hanging up” and running the model in background <br />
 	
 **5. Prediction and Evaluation**
 	Putting the nb for predicting test images and calculating the respective IoU
