@@ -7,7 +7,8 @@ Files:
 - annot_test.csv
 - detecto_weights_xlogos.pth
 - detecto_x_logos.py
-- detecto_evaluation.ipynb
+- predict_detecto_xlogos.py
+- detecto_results_9logos.csv
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Introduction
 Welcome to the repository for Logo Detection using the Detecto model. The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University.
@@ -67,13 +68,16 @@ $nohup python detecto_x_logos.py &
 nohup --> “not hanging up” and running the model in background <br />
 	
 **5. Prediction and Evaluation**
-	Putting the nb for predicting test images and calculating the respective IoU
-		ref: detecto_evaluation.ipynb
-	Brief explanation of IoU
-	Showing the results of the model predictions 
-	(maybe also accuracy metric—> logos correctly predicted) 
+Logo predictions are performed through [predict_detecto_xlogos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
+* the ground-truth bounding boxes (the hand labeled bounding boxes, i.e. given by [annot_test.csv] (LINK) )
+* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_Xlogos.pth] (LINK) ).
 
-put screenshot of images with bouding boxes drawn on it…
+	
+	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
+	
+
+
+Showing the results of the model predictions (maybe also accuracy metric—> logos correctly predicted) + put screenshot of images with bouding boxes drawn on it…
 	
 	
 ## Limitations (TBD)
