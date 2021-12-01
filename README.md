@@ -11,7 +11,7 @@ Files:
 - detecto_results_9logos.csv
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Introduction
-Welcome to the repository for Logo Detection using the Detecto model. The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University.
+Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 **1. The Model - Detecto** <br />
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
@@ -85,6 +85,8 @@ Showing the results of the model predictions (maybe also accuracy metric—> log
 * Unbalanced dataset: too many Nike & Adidas
 * The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/EslFGa-ZMuNItHzhlJS-7owBlOYlMowfnZ7RTLaiiHdbeA?e=6yHCJq
 
+
+[^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University. 
 
 
 # ROBOFLOW
