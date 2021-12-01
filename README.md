@@ -26,7 +26,7 @@ Installing with pip should automatically download all the required module versio
 		>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
 	- the model must run in GPU <br />
 	
-**2. Train Test Split**
+**2. Train Test Split** <br />
 Train and test images have been split with a 80/20 ratio, moving the test images to a new folder ‘test’: 
 ```	
 np.random.seed(123)
@@ -35,7 +35,7 @@ for f in files_name:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
 	
-**3. Model Set up**
+**3. Model Set up** <br />
 * At first we generate the annotations of the train and test dataset and save them into a .csv format.
 ```
 #annot_train.csv is the original .csv file with all annotations
@@ -67,7 +67,7 @@ $nohup python detecto_x_logos.py &
 ```
 nohup --> “not hanging up” and running the model in background <br />
 	
-**5. Prediction and Evaluation**
+**5. Prediction and Evaluation** <br />
 Logo predictions are performed through [predict_detecto_xlogos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the hand labeled bounding boxes, i.e. given by [annot_test.csv] (LINK) )
 * the predicted bounding boxes from our model (by applying the weights file [detecto_weights_Xlogos.pth] (LINK) ).
