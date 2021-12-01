@@ -56,7 +56,7 @@ annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv(….)
 ```
 
-**4. Training the Model**
+**4. Training the Model
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_x_logos.py] **(ADD LINK)**
 ```	
 $python detecto_x_logos.py
