@@ -38,7 +38,7 @@ Moreover, in order to run Detecto, there are also more technical requirements, s
 * The model must run in GPU <br />
 	
 ### Import the Dataset
-The required raw data utilised to run the model and to make predictions can be downloaded from the following [dropbox link](https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0). It contains the `train` folder with all the images and the respective annotations in `annot_train.csv`. To unzip it, run the following code:
+The required raw data utilised to run the model and to make predictions can be downloaded from the following [dropbox link](https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0). It contains the `train` folder with all the images and the respective annotations in `annot_train.csv`. To unzip it, run the following command:
 ```
 $tar -xvf DLCV_logo_project.tar.gz
 ```
