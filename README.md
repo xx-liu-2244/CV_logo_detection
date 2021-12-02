@@ -11,7 +11,7 @@ Files:
 - detecto_results_xlogos.csv -> yes
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Welcome to the repository for Logo Detection using the Detecto model![^1]
+Welcome to the repository for Logo Detection using the Detecto model![^1] 
 
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg" width="400" height="300"/></a>
@@ -20,7 +20,7 @@ Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 
 
-### The Model - Detecto  
+### The Model - Detecto  :mag: 👀
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
 To install Detecto, run the following command: <br />
 	
