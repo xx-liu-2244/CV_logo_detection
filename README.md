@@ -56,15 +56,6 @@ annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv('annot_test.csv')
 ```
 
-### Model Set up  
-* At first we generate the annotations of the train and test dataset and save them into a .csv format.
-
-* In our model we chose XX classes containing XX logos. In order to create noise and to allow for the model to run efficiently without overloading it, among all the 15 logos, the remaining ones have been grouped in the 'Other' class.
-```
-logos = […….]
-
-
-```
 
 ### Training the Model  
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_x_logos.py] **(ADD LINK)**
