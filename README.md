@@ -37,6 +37,9 @@ Moreover, in order to run Detecto, there are also more technical requirements, s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where `image_id` are unique integers in ascending order starting from 0.
 * The model must run in GPU <br />
 	
+### Import the Dataset
+
+
 ### Train Test Split  
 Train and test images have been split with a 80/20 ratio, moving the test images to a new folder `test`: 
 ```	
