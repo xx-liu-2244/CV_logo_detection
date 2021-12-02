@@ -15,8 +15,8 @@ Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg" width="400" height="300"/></a>
-<a href="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg"><img src="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg" width="250" height="300"/></a>
-
+<a href="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg"><img src="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg" width="350" height="300"/></a>
+<a href="https://user-images.githubusercontent.com/81080301/144518212-ecd7fd55-e089-4fa9-9ed2-8ad95b95491c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144518212-ecd7fd55-e089-4fa9-9ed2-8ad95b95491c.jpg" width="350" height="300"/></a>
 
 
 
