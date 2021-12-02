@@ -88,9 +88,8 @@ Logo predictions are performed through [predict_detecto_15logos.py] (LINK) by ca
 Showing the results of the model predictions (maybe also accuracy metric—> logos correctly predicted) + put screenshot of images with bouding boxes drawn on it…
 	
 	
-## Limitations (TBD)
+## Resources
 
-* Unbalanced dataset: too many Nike & Adidas
 * The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=vFnZbW
 * The original dataset (pre-training): https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0
 
