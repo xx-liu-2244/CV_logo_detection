@@ -35,7 +35,7 @@ for f in files_name:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
 	
-### Model Set up  
+### Model Set up  
 * At first we generate the annotations of the train and test dataset and save them into a .csv format.
 ```
 #annot_train.csv is the original .csv file with all annotations
