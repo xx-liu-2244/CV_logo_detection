@@ -30,7 +30,7 @@ To install Detecto, run the following command: <br />
 $pip install detecto
 ```
 Note that installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from [requirements.txt](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/requirements.txt).<br />
-Moreover, in order to run Detecto, there are also more technical requirements: <br />
+Moreover, in order to run Detecto, there are also more technical requirements, such as: <br />
 * The annotations file in .csv has to be structured with the following order and heading names:  <br />
 	>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
 	
@@ -86,9 +86,26 @@ Logo predictions are performed through [predict_detecto_15logos.py](https://bocc
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 	
 
-true_logo |  Adidas | Apple Inc. | Chanel | Coca-Cola | Emirates | Hard Rock Cafe | Mercedes-Benz | NFL | Nike | Other | Pepsi | Puma | Starbucks | The North Face | Toyota | Under Armour 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |--- | --- | --- | --- |--- 
-IoU | 0.843515 | 0.809512 | 0.600565 | 0.715212 | 0.646927 | 0.768398 | 0.858898 | 0.772257 | 0.782048 | 0.547186 | 0.546280 | 0.708084 | 0.846809 | 0.798458 | 0.713046 | 0.778998
+
+true_logo |  IoU
+--- | ---
+Adidas | 0.843515 
+Apple Inc. | 0.809512
+Chanel | 0.600565 
+Coca-Cola  | 0.715212
+Emirates | 0.646927
+Hard Rock Cafe | 0.768398
+Mercedes-Benz | 0.858898
+NFL | 0.772257 
+Nike| 0.782048
+Other | 0.547186
+Pepsi | 0.546280
+Puma | 0.708084
+Starbucks | 0.846809
+The North Face| 0.798458 
+Toyota | 0.713046 
+Under Armour |  0.778998
+
 
 ## Resources
 
