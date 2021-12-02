@@ -25,7 +25,7 @@ Moreover, in order to run Detecto, there are also more technical requirements, s
 * The annotations file in .csv has to be structured with the following order and heading names:  <br />
 	>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
 	
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where `image_id` are unique integers in ascending order starting for 0.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where `image_id` are unique integers in ascending order starting from 0.
 * The model must run in GPU <br />
 	
 ### Train Test Split  
@@ -36,27 +36,34 @@ for f in files_name:
     if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
-
-
-### Model Set up  
-* At first we generate the annotations of the train and test dataset and save them into a .csv format.
+Based on the two images sets created, we split the annotations accordingly by filtering the file names.
 ```
+train_files = os.listdir('train') 
+test_files = os.listdir('test')
+
+logos = ['Adidas','Apple Inc.','Chanel','Coca-Cola','Emirates','Hard Rock Cafe','Mercedes-Benz','NFL','Nike','Pepsi','Puma','Starbucks','The North Face','Toyota','Under Armour']
+
 #annot_train.csv is the original .csv file with all annotations
-
 annot_data = pd.read_csv(‘annot_train.csv’).rename({‘photo_filename’:’filename’}, axis=1)
-```
-* In our model we chose XX classes containing XX logos. In order to create noise and to allow for the model to run efficiently without overloading it, among all the 15 logos, the remaining ones have been grouped in the 'Other' class.
-```
-logos = […….]
 
 annot_train = annot_data[annot_data.filename.isin(train_files)]
 annot_train[‘image_id’] = [i for i in range(len(annot_train))]
 annot_train.loc[~annot_train[‘class'].isin(logos),'class'] = 'Other'
-annot_train.to_csv(……)
+annot_train.to_csv('annot_train.csv')
 
 annot_test = annot_data[annot_data.filename.isin(test_files)]
 annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
-annot_test.to_csv(….)
+annot_test.to_csv('annot_test.csv')
+```
+
+### Model Set up  
+* At first we generate the annotations of the train and test dataset and save them into a .csv format.
+
+* In our model we chose XX classes containing XX logos. In order to create noise and to allow for the model to run efficiently without overloading it, among all the 15 logos, the remaining ones have been grouped in the 'Other' class.
+```
+logos = […….]
+
+
 ```
 
 ### Training the Model  
