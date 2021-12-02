@@ -1,14 +1,14 @@
 # Deep Learning for Computer Vision - Logo Detection
 
 Files:
-- train images (80%)
-- test images (20%)
-- annot_train.csv
-- annot_test.csv
-- detecto_weights_xlogos.pth
-- detecto_x_logos.py
-- predict_detecto_xlogos.py
-- detecto_results_9logos.csv
+- train images (80%) -> link
+- test images (20%) -> link
+- annot_train.csv -> yes
+- annot_test.csv -> yes
+- detecto_weights_xlogos.pth -> link
+- detecto_x_logos.py -> yes
+- predict_detecto_xlogos.py -> yes
+- detecto_results_xlogos.csv -> yes
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Welcome to the repository for Logo Detection using the Detecto model![^1]
@@ -65,7 +65,7 @@ annot_test.to_csv('annot_test.csv')
 
 
 ### Train the Model  
-Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py] **(ADD LINK)**
+Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py] (https://github.com/xx-liu-2244/CV_logo_detection/blob/main/detecto_15_logos.py)
 ```	
 $python detecto_15_logos.py
 ```
@@ -77,8 +77,8 @@ nohup --> “not hanging up” and running the model in background <br />
 	
 ### Prediction and Evaluation  
 Logo predictions are performed through [predict_detecto_15logos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
-* the ground-truth bounding boxes (the hand labeled bounding boxes, i.e. given by [annot_test.csv] (LINK) )
-* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth] (LINK) ).
+* the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv] (https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
+* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth] (https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) ).
 
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
@@ -90,7 +90,7 @@ Showing the results of the model predictions (maybe also accuracy metric—> log
 	
 ## Resources
 
-* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=vFnZbW
+* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm
 * The original dataset (pre-training): https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0
 
 
