@@ -22,6 +22,7 @@ Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 ### The Model - Detecto  :mag: 👀
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
+
 To install Detecto, run the following command: <br />
 	
 ```
@@ -84,10 +85,10 @@ Logo predictions are performed through [predict_detecto_15logos.py] (LINK) by ca
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 	
 
+true_logo |  Adidas | Apple Inc. | Chanel | Coca-Cola | Emirates | Hard Rock Cafe | Mercedes-Benz | NFL | Nike | Other | Pepsi | Puma | Starbucks | The North Face | Toyota | Under Armour 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |--- | --- | --- | --- |--- 
+IoU | 0.843515 | 0.809512 | 0.600565 | 0.715212 | 0.646927 | 0.768398 | 0.858898 | 0.772257 | 0.782048 | 0.547186 | 0.546280 | 0.708084 | 0.846809 | 0.798458 | 0.713046 | 0.778998
 
-Showing the results of the model predictions (maybe also accuracy metric—> logos correctly predicted) + put screenshot of images with bouding boxes drawn on it…
-	
-	
 ## Resources
 
 * The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm
