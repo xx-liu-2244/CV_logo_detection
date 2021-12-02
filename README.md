@@ -15,13 +15,14 @@ Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg" width="400" height="300"/></a>
-<a href="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg"><img src="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg" width="350" height="300"/></a>
-<a href="https://user-images.githubusercontent.com/81080301/144518212-ecd7fd55-e089-4fa9-9ed2-8ad95b95491c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144518212-ecd7fd55-e089-4fa9-9ed2-8ad95b95491c.jpg" width="350" height="300"/></a>
+<a href="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg"><img src="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg" width="250" height="300"/></a>
+
 
 
 
 ### The Model - Detecto  :mag: 👀
-[Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
+[Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />
+Instead of using pre-existing weights, we trained the model on a custom dataset with the aim to predict the following logos and construct their corresponding bounding boxes: Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour.
 
 To install Detecto, run the following command: <br />
 	
@@ -79,32 +80,15 @@ nohup --> “not hanging up” and running the model in background <br />
 ### Prediction and Evaluation  
 Logo predictions are performed through [predict_detecto_15logos.py](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
-* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) )
+* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) ).
 
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 	
 
-true_logo | IoU |
---- | --- | 
-Adidas | 0.843515  |
-Apple Inc.| 0.809512|
-Chanel | 0.600565 |
-Coca-Cola | 0.715212 |
-Emirates | 0.646927 |
-Hard Rock Cafe | 0.768398 |
-Mercedes-Benz | 0.858898 |
-NFL | 0.772257|
-Nike  | 0.782048 |
-Other | 0.547186 |
-Pepsi | 0.708084 |
-Starbucks | 0.846809 |
-The North Face  | 0.798458 |
-Toyota | 0.713046 |
-Under Armour  | 0.778998 |
-
-
-
+true_logo |  Adidas | Apple Inc. | Chanel | Coca-Cola | Emirates | Hard Rock Cafe | Mercedes-Benz | NFL | Nike | Other | Pepsi | Puma | Starbucks | The North Face | Toyota | Under Armour 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |--- | --- | --- | --- |--- 
+IoU | 0.843515 | 0.809512 | 0.600565 | 0.715212 | 0.646927 | 0.768398 | 0.858898 | 0.772257 | 0.782048 | 0.547186 | 0.546280 | 0.708084 | 0.846809 | 0.798458 | 0.713046 | 0.778998
 
 ## Resources
 
