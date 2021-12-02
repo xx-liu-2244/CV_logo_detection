@@ -91,7 +91,8 @@ Showing the results of the model predictions (maybe also accuracy metric—> log
 ## Limitations (TBD)
 
 * Unbalanced dataset: too many Nike & Adidas
-* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:x:/g/personal/alessia_lin_studbocconi_it/EbMZNAw9KPRCnfR-YKK-m0sBLV21_hhSOlXODoMyZTWiIQ?e=MJTC3c
+* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=vFnZbW
+* The original dataset (pre-training): https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0
 
 
 [^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University. 
