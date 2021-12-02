@@ -57,10 +57,10 @@ annot_test.to_csv('annot_test.csv')
 ```
 
 
-### Training the Model  
-Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_x_logos.py] **(ADD LINK)**
+### Train the Model  
+Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py] **(ADD LINK)**
 ```	
-$python detecto_x_logos.py
+$python detecto_15_logos.py
 ```
 NB: Since neural networks tend to take long training periods (on average it took us **5:30h** per epoch!), we suggest to implement the following command within your terminal (or Powershell) before running the above python code:
 ```
@@ -69,9 +69,9 @@ $nohup python detecto_x_logos.py &
 nohup --> “not hanging up” and running the model in background <br />
 	
 ### Prediction and Evaluation  
-Logo predictions are performed through [predict_detecto_xlogos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
+Logo predictions are performed through [predict_detecto_15logos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the hand labeled bounding boxes, i.e. given by [annot_test.csv] (LINK) )
-* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_Xlogos.pth] (LINK) ).
+* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth] (LINK) ).
 
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
