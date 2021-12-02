@@ -30,7 +30,7 @@ To install Detecto, run the following command: <br />
 $pip install detecto
 ```
 Note that installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from [requirements.txt](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/requirements.txt).<br />
-Moreover, in order to run Detecto, there are also more technical requirements, such as: <br />
+Moreover, in order to run Detecto, there are also more technical requirements: <br />
 * The annotations file in .csv has to be structured with the following order and heading names:  <br />
 	>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
 	
