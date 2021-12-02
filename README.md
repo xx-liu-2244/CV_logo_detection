@@ -13,7 +13,7 @@ Files:
 # Introduction
 Welcome to the repository for Logo Detection using the Detecto model![^1]
 
-**1. The Model - Detecto** <br />
+### The Model - Detecto  
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
 * To install Detecto, run the following command: <br />
 	
@@ -26,7 +26,7 @@ Installing with pip should automatically download all the required module versio
 		>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
 	- the model must run in GPU <br />
 	
-**2. Train Test Split** <br />
+### Train Test Split  
 Train and test images have been split with a 80/20 ratio, moving the test images to a new folder ‘test’: 
 ```	
 np.random.seed(123)
@@ -35,7 +35,7 @@ for f in files_name:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
 	
-**3. Model Set up** <br />
+### Model Set up  
 * At first we generate the annotations of the train and test dataset and save them into a .csv format.
 ```
 #annot_train.csv is the original .csv file with all annotations
@@ -56,7 +56,7 @@ annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv(….)
 ```
 
-**4. Training the Model** <br />
+### Training the Model  
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_x_logos.py] **(ADD LINK)**
 ```	
 $python detecto_x_logos.py
@@ -67,7 +67,7 @@ $nohup python detecto_x_logos.py &
 ```
 nohup --> “not hanging up” and running the model in background <br />
 	
-**5. Prediction and Evaluation** <br />
+### Prediction and Evaluation  
 Logo predictions are performed through [predict_detecto_xlogos.py] (LINK) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the hand labeled bounding boxes, i.e. given by [annot_test.csv] (LINK) )
 * the predicted bounding boxes from our model (by applying the weights file [detecto_weights_Xlogos.pth] (LINK) ).
