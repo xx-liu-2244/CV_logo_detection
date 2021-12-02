@@ -10,31 +10,34 @@ Files:
 - predict_detecto_xlogos.py
 - detecto_results_9logos.csv
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Introduction
+
 Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 ### The Model - Detecto  
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />	
-* To install Detecto, run the following command: <br />
+To install Detecto, run the following command: <br />
 	
 ```
 $pip install detecto
 ```
-Installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from [requirements.txt](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/requirements.txt).<br />
-* Moreover, in order to run Detecto, there are also more technical requirements, such as: <br />
-	- The annotations file in .csv has to be structured with the following header:  <br />
-		>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
-	- the model must run in GPU <br />
+Note that installing with pip should automatically download all the required module versions, however if there are still issues, manually download the dependencies from [requirements.txt](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/requirements.txt).<br />
+Moreover, in order to run Detecto, there are also more technical requirements, such as: <br />
+* The annotations file in .csv has to be structured with the following order and heading names:  <br />
+	>filename, height, width, class, xmin, ymin, xmax, ymax, image_id<br />
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where `image_id` are unique integers in ascending order starting for 0.
+* The model must run in GPU <br />
 	
 ### Train Test Split  
-Train and test images have been split with a 80/20 ratio, moving the test images to a new folder ‘test’: 
+Train and test images have been split with a 80/20 ratio, moving the test images to a new folder `test`: 
 ```	
 np.random.seed(123)
 for f in files_name:
     if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
-	
+
+
 ### Model Set up  
 * At first we generate the annotations of the train and test dataset and save them into a .csv format.
 ```
