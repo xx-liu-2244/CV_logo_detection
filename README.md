@@ -1,6 +1,6 @@
 # Deep Learning for Computer Vision - Logo Detection
 
-Welcome to the repository for Logo Detection using the Detecto model![^1] 
+Welcome to the repository for Logo Detection using the Detecto model![^1] :raised_hands: 
 
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg" width="400" height="300"/></a>
@@ -26,13 +26,13 @@ Moreover, in order to run Detecto, there are also more technical requirements, s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where `image_id` are unique integers in ascending order starting from 0.
 * The model must run in GPU <br />
 	
-### Import the Dataset
+### Import the Dataset :floppy_disk:
 The required raw data utilised to run the model and to make predictions can be downloaded from the following [dropbox link](https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0). It contains the `train` folder with all the images and the respective annotations in `annot_train.csv`. To unzip it, run the following command:
 ```
 $tar -xvf DLCV_logo_project.tar.gz
 ```
 
-### Train Test Split  
+### Train Test Split  :scissors:
 After downloading the file within the desired working directory, we split images into train and test with a 80/20 ratio, moving the test images to a new folder `test`: 
 ```	
 np.random.seed(123)
@@ -62,7 +62,7 @@ annot_test.to_csv('annot_test.csv')
 ```
 
 
-### Train the Model  
+### Train the Model  :weight_lifting:
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/detecto_15_logos.py)
 ```	
 $python detecto_15_logos.py
@@ -73,7 +73,7 @@ $nohup python detecto_15_logos.py &
 ```
 nohup --> “not hanging up” and running the model in background. <br />
 	
-### Prediction and Evaluation[^2]
+### Prediction and Evaluation[^2] :crystal_ball:
 Logo predictions are performed through [predict_detecto_15logos.py](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
 * the predicted bounding boxes from our model by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW) )
