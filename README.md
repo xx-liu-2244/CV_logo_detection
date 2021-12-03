@@ -60,9 +60,10 @@ annot_test = annot_data[annot_data.filename.isin(test_files)]
 annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv('annot_test.csv')
 ```
+For convenience, we have already uploaded the files [annot_train.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_train.csv) and [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv), so that the above code can be skipped.
+
 Complete code reference: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
 
-Fo convenience, we have already uploaded the [annot_train.csv]() and [annot_test.csv]()
 ### Train the Model  :weight_lifting:
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/detecto_15_logos.py)
 ```	
