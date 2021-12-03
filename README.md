@@ -123,4 +123,4 @@ _Model Accuracy for the 5 compulsory logos:_ 91.985%
 
 
 
-[^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for 20600 Computer Vision at Bocconi University. 
+[^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision (20600) at Bocconi University. 
