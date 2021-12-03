@@ -44,7 +44,7 @@ $tar -xvf DLCV_logo_project.tar.gz
 ```
 
 ### Train Test Split  
-Train and test images have been split with a 80/20 ratio, moving the test images to a new folder `test`: 
+After downloading the file within the desired working path, we split images into train and test with a 80/20 ratio, moving the test images to a new folder `test`: 
 ```	
 np.random.seed(123)
 for f in files_name:
@@ -83,7 +83,7 @@ $nohup python detecto_15_logos.py &
 ```
 nohup --> “not hanging up” and running the model in background <br />
 	
-### Prediction and Evaluation  
+### Prediction and Evaluation[^2]
 Logo predictions are performed through [predict_detecto_15logos.py](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
 * the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) ).
@@ -113,14 +113,10 @@ Toyota | 0.713046
 Under Armour |  0.778998
 
 
-## Resources
-
-* The files used for analysis are in OneDrive: https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm
-* The original dataset (pre-training): https://www.dropbox.com/s/nkoxs4boe8m48xf/DLCV_logo_project.tar.gz?dl=0
 
 
 [^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University. 
-
+[^2]: The files used for the analysis (weights created from training the model and the output .csv with the predicted logos are located in [OneDrive](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm)
 
 # ROBOFLOW
 By Domenique: if you register as a public account it gives you the possibility to upload up to 10k images.
