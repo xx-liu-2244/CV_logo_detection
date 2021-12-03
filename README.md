@@ -72,6 +72,7 @@ NB: Since neural networks tend to take long training periods (on average it took
 $nohup python detecto_15_logos.py &  
 ```
 `nohup` --> “not hanging up”, i.e. it will keep running regardless of the connection status
+
 `&` --> run the command in background <br />
 	
 ### Prediction and Evaluation :crystal_ball:
