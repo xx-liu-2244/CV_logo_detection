@@ -22,7 +22,7 @@ Welcome to the repository for Logo Detection using the Detecto model![^1]
 
 ### The Model - Detecto  :mag: 👀
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />
-Instead of using pre-existing weights, we trained the model on a custom dataset with the aim to predict the following logos and construct their corresponding bounding boxes: Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour.
+Instead of using pre-existing weights, we trained the model on a custom dataset with the aim to predict the following logos and construct their corresponding bounding boxes: _Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour_.
 
 To install Detecto, run the following command: <br />
 	
