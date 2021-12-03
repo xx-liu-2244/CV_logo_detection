@@ -102,6 +102,8 @@ def IoU(y_true,y_pred):
     # return the intersection over union value
     return iou 
 ```
+The outcome of our prediction can be found in [detecto_result_15logos.csv](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW), which includes: the test images, IoU, the true logo, and the predicted logo.
+
 
 	
 From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:<br>
