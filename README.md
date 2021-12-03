@@ -33,14 +33,14 @@ $tar -xvf DLCV_logo_project.tar.gz
 ```
 
 ### Train Test Split  :scissors:
-After downloading the file within the desired working directory, we split images into train and test with a 80/20 ratio, moving the test images to a new folder `test`: 
+After unzipping the file within the desired working directory, we split the images into train and test sets with a 80/20 ratio, moving the test images to a new folder `test`, which should have been already created: 
 ```	
 np.random.seed(123)
 for f in files_name:
     if np.random.rand(1) < 0.2:
-        	shutil.move('train_images/'+f, 'test_images/'+f) 
+        	shutil.move('train/'+f, 'test/'+f) 
 ```
-Based on the two images sets created, we split the annotations accordingly by filtering the file names.
+Based on the two images sets created, we split the annotations accordingly by filtering with the file names.
 
 ```
 train_files = os.listdir('train') #train images folder
@@ -54,11 +54,11 @@ annot_data = pd.read_csv(‘annot_train.csv’).rename({‘photo_filename’:’
 annot_train = annot_data[annot_data.filename.isin(train_files)]
 annot_train[‘image_id’] = [i for i in range(len(annot_train))]
 annot_train.loc[~annot_train[‘class'].isin(logos),'class'] = 'Other'
-annot_train.to_csv('annot_train.csv')
+annot_train.to_csv('annot_train.csv') #save the annotations
 
 annot_test = annot_data[annot_data.filename.isin(test_files)]
 annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
-annot_test.to_csv('annot_test.csv')
+annot_test.to_csv('annot_test.csv') #save the annotations
 ```
 For convenience, we have already uploaded the files [annot_train.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_train.csv) and [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv), so that the above code can be skipped.
 
