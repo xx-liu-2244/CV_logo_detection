@@ -1,4 +1,4 @@
-from detecto import core, utils, visualize
+from detecto import core, utils
 from torchvision import transforms
 
 labels = ['Nike', 'Adidas', 'Under Armour', 'Puma', 'The North Face',
