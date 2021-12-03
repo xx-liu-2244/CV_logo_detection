@@ -51,10 +51,10 @@ for f in files_name:
     if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
-Based on the two images sets created, we split the annotations accordingly by filtering the file names.
+Based on the two images sets created, we split the annotations accordingly by filtering the file names. Ref: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
 ```
-train_files = os.listdir('train') 
-test_files = os.listdir('test')
+train_files = os.listdir('train') #train images folder
+test_files = os.listdir('test') #test images folder
 
 logos = ['Adidas','Apple Inc.','Chanel','Coca-Cola','Emirates','Hard Rock Cafe','Mercedes-Benz','NFL','Nike','Pepsi','Puma','Starbucks','The North Face','Toyota','Under Armour']
 
@@ -92,6 +92,7 @@ Logo predictions are performed through [predict_detecto_15logos.py](https://bocc
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 	
 
+<br>
 
 true_logo |  IoU
 --- | ---
