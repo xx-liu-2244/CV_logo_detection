@@ -1,16 +1,5 @@
 # Deep Learning for Computer Vision - Logo Detection
 
-Files:
-- train images (80%) -> link
-- test images (20%) -> link
-- annot_train.csv -> yes
-- annot_test.csv -> yes
-- detecto_weights_xlogos.pth -> link
-- detecto_x_logos.py -> yes
-- predict_detecto_xlogos.py -> yes
-- detecto_results_xlogos.csv -> yes (do we really want this?)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Welcome to the repository for Logo Detection using the Detecto model![^1] 
 
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
@@ -51,7 +40,8 @@ for f in files_name:
     if np.random.rand(1) < 0.2:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
-Based on the two images sets created, we split the annotations accordingly by filtering the file names. Ref: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
+Based on the two images sets created, we split the annotations accordingly by filtering the file names.
+Complete code reference: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
 ```
 train_files = os.listdir('train') #train images folder
 test_files = os.listdir('test') #test images folder
@@ -86,12 +76,13 @@ nohup --> “not hanging up” and running the model in background. <br />
 ### Prediction and Evaluation[^2]
 Logo predictions are performed through [predict_detecto_15logos.py](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
 * the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
-* the predicted bounding boxes from our model (by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) )
+* the predicted bounding boxes from our model by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW) )
 
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
-	
 
+<br>	
+From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:
 <br>
 
 true_logo |  IoU
@@ -113,12 +104,14 @@ The North Face| 0.798458
 Toyota | 0.713046 
 Under Armour |  0.778998
 
+Model Accuracy: 91.985%
 
 
 
 [^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for 20600 Computer Vision at Bocconi University. 
 [^2]: The files used for the analysis (weights created from training the model and the output .csv with the predicted logos) are located in [OneDrive](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ROBOFLOW
 By Domenique: if you register as a public account it gives you the possibility to upload up to 10k images.
 
