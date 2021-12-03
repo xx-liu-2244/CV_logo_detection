@@ -2,6 +2,10 @@
 
 Welcome to the repository for Logo Detection using the Detecto model![^1] :raised_hands: 
 
+The aim of this project is to predict the following logos and construct their corresponding bounding boxes: _Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour_.
+
+Below few image examples of the results obtained, where the true bounding box is in **green** and the predicted one in **red**.
+
 <a href="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510250-f960b63c-ac2a-41db-b77c-f3d4d5a0f181.jpg" width="300" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg"><img src="https://user-images.githubusercontent.com/81080301/144510291-e2c3e970-7166-48d1-8bc9-49fba00c465c.jpg" width="400" height="300"/></a>
 <a href="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg"><img src="https://user-images.githubusercontent.com/81080301/144511248-b86bbd14-4e99-40a4-b8c3-e243792c5630.jpg" width="350" height="300"/></a>
@@ -11,7 +15,7 @@ Welcome to the repository for Logo Detection using the Detecto model![^1] :raise
 
 ### The Model - Detecto  :mag: 👀
 [Detecto](https://detecto.readthedocs.io/en/latest/) is a Python package built on top of Pytorch that allows you to perform object detection and make inference on still images and videos. It creates and runs a pre-trained RCNN ResNet-50 FPN. <br />
-Instead of using pre-existing weights, we trained the model on a custom dataset with the aim to predict the following logos and construct their corresponding bounding boxes: _Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour_.
+Instead of using pre-existing weights, we trained the Detecto model on our custom dataset where the target labels are the logos.
 
 To install Detecto, run the following command: <br />
 	
