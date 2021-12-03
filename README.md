@@ -73,39 +73,20 @@ $nohup python detecto_15_logos.py &
 ```
 nohup --> “not hanging up” and running the model in background. <br />
 	
-### Prediction and Evaluation[^2] :crystal_ball:
+### Prediction and Evaluation :crystal_ball:
 Logo predictions are performed through [predict_detecto_15logos.py](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm) by calculating the respective Intersection over Union (IoU). IoU is an evaluation metric used to measure the accuracy of an object detector on a particular dataset, especially with convolutional neural networks. In order to apply IoU we need:<br />
-* the ground-truth bounding boxes (the true hand-labeled bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) )
-* the predicted bounding boxes from our model by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW) )
+* the ground-truth bounding boxes, i.e. given by [annot_test.csv](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/annot_test.csv) 
+* the predicted bounding boxes from our model by applying the weights file [detecto_weights_15logos.pth](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW)
 
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 
 ```
-def IoU(y_true,y_pred):
-    xA = max(y_true[0], y_pred[0])       
-    yA = max(y_true[1], y_pred[1])
-    xB = min(y_true[2], y_pred[2])
-    yB = min(y_true[3], y_pred[3])
-
-    # compute the area of intersection rectangle
-    interArea = max(0, xB - xA) * max(0, yB - yA)
-
-    # compute the area of both the prediction and ground-truth rectangles
-    boxtrueArea = (y_true[2] - y_true[0]) * (y_true[3] - y_true[1])    
-    boxpredArea = (y_pred[2] - y_pred[0]) * (y_pred[3] - y_pred[1])
-
-    # compute the intersection over union by taking the intersection area and dividing it 
-    # by the sum of prediction + ground-truth areas - the interesection area
-    iou = interArea / float(boxtrueArea + boxpredArea - interArea)
-
-    # return the intersection over union value
-    return iou 
+$nohup python predict_detecto_15logos.py &
 ```
 The outcome of our prediction can be found in [detecto_result_15logos.csv](https://bocconi-my.sharepoint.com/:u:/r/personal/alessia_lin_studbocconi_it/Documents/CV/DLCV_15logos/detecto_weights_15logos.pth?csf=1&web=1&e=UcWDKW), which includes: the test images, IoU, the true logo, and the predicted logo.
 
 
-	
 From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:<br>
 
 
@@ -129,12 +110,11 @@ The North Face| 0.798458
 Toyota | 0.713046 
 Under Armour |  0.778998
 
-Model Accuracy for the 5 compulsory logos: 91.985%
+_Model Accuracy for the 5 compulsory logos:__ 91.985%
 
 
 
 [^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for 20600 Computer Vision at Bocconi University. 
-[^2]: The files used for the analysis (weights created from training the model and the output .csv with the predicted logos) are located in [OneDrive](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ROBOFLOW
