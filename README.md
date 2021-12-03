@@ -62,6 +62,7 @@ annot_test.to_csv('annot_test.csv')
 ```
 Complete code reference: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
 
+Fo convenience, we have already uploaded the [annot_train.csv]() and [annot_test.csv]()
 ### Train the Model  :weight_lifting:
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/detecto_15_logos.py)
 ```	
