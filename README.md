@@ -81,6 +81,28 @@ Logo predictions are performed through [predict_detecto_15logos.py](https://bocc
 	
 	> IoU = <sup>Area of Overlap</sup>&frasl;<sub>Area of Union</sub> 
 
+```
+def IoU(y_true,y_pred):
+    xA = max(y_true[0], y_pred[0])       
+    yA = max(y_true[1], y_pred[1])
+    xB = min(y_true[2], y_pred[2])
+    yB = min(y_true[3], y_pred[3])
+
+    # compute the area of intersection rectangle
+    interArea = max(0, xB - xA) * max(0, yB - yA)
+
+    # compute the area of both the prediction and ground-truth rectangles
+    boxtrueArea = (y_true[2] - y_true[0]) * (y_true[3] - y_true[1])    
+    boxpredArea = (y_pred[2] - y_pred[0]) * (y_pred[3] - y_pred[1])
+
+    # compute the intersection over union by taking the intersection area and dividing it 
+    # by the sum of prediction + ground-truth areas - the interesection area
+    iou = interArea / float(boxtrueArea + boxpredArea - interArea)
+
+    # return the intersection over union value
+    return iou 
+```
+
 <br>	
 From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:
 <br>
