@@ -44,7 +44,7 @@ $tar -xvf DLCV_logo_project.tar.gz
 ```
 
 ### Train Test Split  
-After downloading the file within the desired working path, we split images into train and test with a 80/20 ratio, moving the test images to a new folder `test`: 
+After downloading the file within the desired working directory, we split images into train and test with a 80/20 ratio, moving the test images to a new folder `test`: 
 ```	
 np.random.seed(123)
 for f in files_name:
