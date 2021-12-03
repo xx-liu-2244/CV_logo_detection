@@ -103,9 +103,10 @@ def IoU(y_true,y_pred):
     return iou 
 ```
 
-<br>	
-From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:
-<br>
+	
+From `predict_detecto_15logos.py` we obtained the following results for the prediction metric with respect to the true bounding boxes:<br>
+
+
 
 true_logo |  IoU
 --- | ---
