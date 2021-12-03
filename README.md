@@ -104,7 +104,7 @@ The North Face| 0.798458
 Toyota | 0.713046 
 Under Armour |  0.778998
 
-Model Accuracy: 91.985%
+Model Accuracy for the 5 compulsory logos: 91.985%
 
 
 
