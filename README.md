@@ -2,7 +2,7 @@
 
 Welcome to the repository for Logo Detection using the Detecto model![^1] :raised_hands: 
 
-The aim of this project is to predict the following logos and construct their corresponding bounding boxes: _Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour_.
+The aim of this project is to predict the following [logos](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/15logos_names.txt) and construct their corresponding bounding boxes: _Adidas, Apple Inc., Chanel, Coca-Cola, Emirates, Hard Rock Cafe, Mercedes-Benz, NFL, Nike, Pepsi, Puma, Starbucks, The North Face, Toyota, Under Armour_.
 
 Below few image examples of the results obtained, where the true bounding box is in **green** and the predicted one in **red**.
 
