@@ -115,7 +115,7 @@ Under Armour |  0.778998
 
 
 
-[^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for Computer Vision at Bocconi University. 
+[^1]: The purpose of this repository is solely for the final submission of the course of Deep Learning for 20600 Computer Vision at Bocconi University. 
 [^2]: The files used for the analysis (weights created from training the model and the output .csv with the predicted logos are located in [OneDrive](https://bocconi-my.sharepoint.com/:f:/g/personal/alessia_lin_studbocconi_it/Ehn6_H1j4hVGgJHL8DJq8dQBwDDedYqAR7qZ9yZVGDVliA?e=hccapm)
 
 # ROBOFLOW
