@@ -41,7 +41,7 @@ for f in files_name:
         	shutil.move('train_images/'+f, 'test_images/'+f) 
 ```
 Based on the two images sets created, we split the annotations accordingly by filtering the file names.
-Complete code reference: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
+
 ```
 train_files = os.listdir('train') #train images folder
 test_files = os.listdir('test') #test images folder
@@ -60,7 +60,7 @@ annot_test = annot_data[annot_data.filename.isin(test_files)]
 annot_test.loc[~annot_test[‘class'].isin(logos),'class'] = 'Other'
 annot_test.to_csv('annot_test.csv')
 ```
-
+Complete code reference: [data_processing.ipynb](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/data_preprocessing.ipynb)
 
 ### Train the Model  :weight_lifting:
 Before feeding the data to Detecto, we have performed some augmentations that can be found within [detecto_15_logos.py](https://github.com/xx-liu-2244/CV_logo_detection/blob/main/detecto_15_logos.py)
